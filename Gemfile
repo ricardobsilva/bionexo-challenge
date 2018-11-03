@@ -38,6 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'active_model_serializers', '~> 0.10'
 gem 'kaminari'
 gem 'wisper', '2.0.0'
+gem 'geokit-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

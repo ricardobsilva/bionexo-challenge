@@ -3,13 +3,12 @@ class Api::V1::FindUbs
 
   def initialize(params)
     @query = params[:query],
-    @page = params[:page],
     @per_page = params[:per_page]
   end
 
   def call
     ubs = find_ubs
-    if @per_page.present?
+    if ubs
       broadcast(:success, ubs)
     else
       broadcast(:failed)
@@ -17,7 +16,9 @@ class Api::V1::FindUbs
   end
 
   def find_ubs
-    BasicHealthUnit.page(@page)
-                   .per(@per_page)
+    if @query[0].present?
+      lat_long = @query[0]
+      BasicHealthUnit.by_distance(origin: lat_long).page(@page).per(@per_page)
+    end
   end
 end
