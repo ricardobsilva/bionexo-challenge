@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Guia para executar a aplicação:
 
-Things you may want to cover:
+* Criar banco de dados:
+  - ```rails db:create db:migrate ```
 
-* Ruby version
 
-* System dependencies
+* Importar dados do arquivo csv (documentation/ubs.csv)
+  - execute o rake task para realizar a importação:
+  ```rake usb:import```
 
-* Configuration
 
-* Database creation
+* Criar banco de dados:
+  - ```rails db:create db:migrate ```
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Para rodar os testes:
+  - ```rspec spec```
