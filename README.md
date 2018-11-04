@@ -11,8 +11,8 @@ Guia para executar a aplicação:
   ```rake usb:import```
 
 
-* Criar banco de dados:
-  - ```rails db:create db:migrate ```
+* Iniciar aplicação:
+  - ```rails s```
 
 
 * Para rodar os testes:
